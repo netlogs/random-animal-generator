@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import AnimalGenerator from '../components/AnimalGenerator.astro';
+---
+
+<Layout title="Random Animal Generator - Create Unique Animal Collections">
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="min-h-screen bg-gradient-to-b from-black to-gray-900 flex items-center justify-center px-4 pt-16">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Random Animal Generator</h1>
+        <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">Generate unique collections of animals with our intuitive tool. Perfect for education, design, and creative projects.</p>
+        <AnimalGenerator />
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-black">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-16">Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div class="text-center">
+            <h3 class="text-xl font-semibold text-white mb-4">Instant Generation</h3>
+            <p class="text-gray-400">Generate random animals with a single click, perfect for quick inspiration.</p>
+          </div>
+          <div class="text-center">
+            <h3 class="text-xl font-semibold text-white mb-4">High-Quality Images</h3>
+            <p class="text-gray-400">Each animal comes with a professionally curated high-resolution image.</p>
+          </div>
+          <div class="text-center">
+            <h3 class="text-xl font-semibold text-white mb-4">Customizable Amount</h3>
+            <p class="text-gray-400">Choose exactly how many animals you want to generate, from 1 to 10.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-24 bg-gray-900">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-16">How It Works</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="text-4xl font-bold text-accent mb-4">1</div>
+            <h3 class="text-xl font-semibold text-white mb-2">Adjust the Slider</h3>
+            <p class="text-gray-400">Select how many animals you want to generate</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-accent mb-4">2</div>
+            <h3 class="text-xl font-semibold text-white mb-2">Click Generate</h3>
+            <p class="text-gray-400">Hit the generate button to create your collection</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-accent mb-4">3</div>
+            <h3 class="text-xl font-semibold text-white mb-2">Get Results</h3>
+            <p class="text-gray-400">Instantly receive your random animal selection</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-24 bg-black">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-16">What Our Users Say</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-gray-900 p-6 rounded-2xl">
+            <p class="text-gray-300 mb-4">"Perfect for my classroom activities. The kids love seeing what animals appear!"</p>
+            <p class="text-white font-medium">- Sarah Johnson, Teacher</p>
+          </div>
+          <div class="bg-gray-900 p-6 rounded-2xl">
+            <p class="text-gray-300 mb-4">"I use this for my design projects when I need quick animal references."</p>
+            <p class="text-white font-medium">- Mike Chen, Designer</p>
+          </div>
+          <div class="bg-gray-900 p-6 rounded-2xl">
+            <p class="text-gray-300 mb-4">"Simple, fast, and exactly what I needed for generating random animal lists."</p>
+            <p class="text-white font-medium">- Emma Davis, Content Creator</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-24 bg-gray-900">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-16">Frequently Asked Questions</h2>
+        <div class="space-y-8 max-w-3xl mx-auto">
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">How many animals can I generate at once?</h3>
+            <p class="text-gray-400">You can generate between 1 and 10 animals at a time using our slider control.</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">Are the images royalty-free?</h3>
+            <p class="text-gray-400">Yes, all animal images are free to use for personal and commercial projects.</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">Can I download the generated images?</h3>
+            <p class="text-gray-400">Yes, you can right-click and save any generated animal image.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-white font-semibold mb-4">Random Animal Generator</h3>
+            <p class="text-gray-400">Create unique animal collections instantly.</p>
+          </div>
+          <div>
+            <h3 class="text-white font-semibold mb-4">Contact</h3>
+            <p class="text-gray-400">colorepistle@gmail.com</p>
+          </div>
+          <div>
+            <h3 class="text-white font-semibold mb-4">Legal</h3>
+            <ul class="text-gray-400 space-y-2">
+              <li><a href="/privacy">Privacy Policy</a></li>
+              <li><a href="/terms">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-white font-semibold mb-4">Follow Us</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white">Twitter</a>
+              <a href="#" class="text-gray-400 hover:text-white">Instagram</a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+          <p class="text-gray-400">© {new Date().getFullYear()} Cepistle. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+</Layout>
