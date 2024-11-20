@@ -1,5 +1,6 @@
 ---
-import { animals } from '../data/animals.json';
+import animalData from '../data/animals.json';
+const { animals } = animalData;
 ---
 
 <div class="w-full max-w-2xl mx-auto bg-white/10 backdrop-blur-md rounded-2xl p-8">
@@ -29,30 +30,50 @@ import { animals } from '../data/animals.json';
   </button>
 </div>
 
-<script>
-  const animals = {animals};
-  const slider = document.getElementById('animalCount');
-  const countDisplay = document.getElementById('countDisplay');
-  const generateBtn = document.getElementById('generateBtn');
-  const animalGrid = document.getElementById('animalGrid');
+<script define:vars={{animals}}>
+  document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('animalCount');
+    const countDisplay = document.getElementById('countDisplay');
+    const generateBtn = document.getElementById('generateBtn');
+    const animalGrid = document.getElementById('animalGrid');
 
-  slider.addEventListener('input', (e) => {
-    countDisplay.textContent = e.target.value;
-  });
-
-  generateBtn.addEventListener('click', () => {
-    const count = parseInt(slider.value);
-    animalGrid.innerHTML = '';
-    
-    for (let i = 0; i < count; i++) {
-      const randomAnimal = animals[Math.floor(Math.random() * animals.length)];
-      const card = document.createElement('div');
-      card.className = 'bg-white/5 backdrop-blur-sm rounded-lg p-4 text-center';
-      card.innerHTML = `
-        <img src="/animals/${randomAnimal.toLowerCase()}.jpg" alt="${randomAnimal}" class="w-full h-48 object-cover rounded-lg mb-4">
-        <h3 class="text-xl font-medium text-white">${randomAnimal}</h3>
-      `;
-      animalGrid.appendChild(card);
+    if (!generateBtn || !slider || !animalGrid || !countDisplay) {
+      console.error('Required elements not found');
+      return;
     }
+
+    slider.addEventListener('input', function() {
+      const value = this.value;
+      if (countDisplay) {
+        countDisplay.textContent = value;
+      }
+    });
+
+    if (countDisplay) {
+      countDisplay.textContent = slider.value;
+    }
+
+    generateBtn.addEventListener('click', () => {
+      const count = parseInt(slider.value);
+      animalGrid.innerHTML = '';
+      
+      for (let i = 0; i < count; i++) {
+        const randomAnimal = animals[Math.floor(Math.random() * animals.length)];
+        
+        const card = document.createElement('div');
+        card.className = 'bg-white/5 backdrop-blur-sm rounded-lg p-4 text-center';
+        
+        card.innerHTML = `
+          <img 
+            src="/animals/${randomAnimal}.jpg" 
+            alt="${randomAnimal}" 
+            class="w-full h-48 object-cover rounded-lg mb-4"
+            onerror="this.src='/fallback-image.jpg'"
+          >
+          <h3 class="text-xl font-medium text-white">${randomAnimal}</h3>
+        `;
+        animalGrid.appendChild(card);
+      }
+    });
   });
 </script>

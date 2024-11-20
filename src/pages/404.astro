@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404 - Page Not Found">
+  <main class="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white flex flex-col items-center justify-center px-4">
+    <div class="max-w-2xl mx-auto text-center space-y-8 backdrop-blur-lg bg-white/5 p-12 rounded-3xl">
+      <!-- 大数字404 -->
+      <h1 class="text-[120px] font-bold leading-none tracking-tight bg-gradient-to-r from-white to-gray-400 text-transparent bg-clip-text">
+        404
+      </h1>
+      
+      <!-- 标题 -->
+      <h2 class="text-3xl font-semibold tracking-tight text-gray-200">
+        Page not found
+      </h2>
+      
+      <!-- 描述文本 -->
+      <p class="text-lg text-gray-400 max-w-md mx-auto">
+        The page you're looking for doesn't exist or has been moved.
+      </p>
+      
+      <!-- 返回首页按钮 -->
+      <div class="pt-4">
+        <a 
+          href="/" 
+          class="inline-flex items-center px-6 py-3 rounded-full bg-accent text-white font-medium hover:bg-accent/90 transition-colors duration-200"
+        >
+          Return Home
+        </a>
+      </div>
+    </div>
+    
+    <!-- 装饰性背景模糊圆 -->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+      <div class="absolute -top-40 -right-40 w-80 h-80 bg-accent opacity-30 rounded-full blur-[100px]"></div>
+      <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500 opacity-30 rounded-full blur-[100px]"></div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+</style>

@@ -4,6 +4,8 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <!doctype html>
@@ -14,19 +16,24 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <meta name="description" content="Generate random animal collections instantly with our intuitive tool. Perfect for education, design, and creative projects." />
-    
+    <meta name="description" content="Generate random animal collections instantly with our intuitive tool. Over 200 random animals!" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content="Generate random animal collections instantly with our intuitive tool." />
     <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:url" content={canonicalURL} />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content="Generate random animal collections instantly with our intuitive tool." />
     <meta property="twitter:image" content="/og-image.jpg" />
+    <meta property="twitter:url" content={canonicalURL} />
     
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -34,7 +41,7 @@ const { title } = Astro.props;
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "Random Animal Generator",
-        "description": "Generate random animal collections instantly with our intuitive tool. Perfect for education, design, and creative projects.",
+        "description": "Generate random animal collections instantly with our intuitive tool. Over 200 random animals!",
         "applicationCategory": "UtilityApplication",
         "operatingSystem": "Any",
         "offers": {

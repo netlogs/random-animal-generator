@@ -3,7 +3,7 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://random-animal-generator.com',
+  site: 'https://random-animal-generator.org',
   integrations: [
     tailwind(),
     sitemap()

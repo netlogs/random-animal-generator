@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://random-animal-generator.org/sitemap-index.xml 
